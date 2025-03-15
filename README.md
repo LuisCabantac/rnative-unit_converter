@@ -1,8 +1,23 @@
-# Welcome to your Expo app 👋
+# Unit Converter
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile unit converter application built with React Native and Expo, ported from the web version. This app provides 50+ conversions across 10 unit categories.
 
-## Get started
+## Features
+
+Convert values between different units in these categories:
+
+- **Area**: Square Kilometre, Square Metre, Square Mile, Square Yard, Square Foot, Square Inch, Hectare, Acre
+- **Frequency**: Hertz, Kilohertz, Megahertz, Gigahertz
+- **Fuel Economy**: Miles per US Gallon, Miles per Gallon, Kilometre per Litre, Liter per 100 Kilometre
+- **Length**: Kilometre, Metre, Centimetre, Millimetre, Micrometre, Nanometre, Mile, Yard, Foot, Inch
+- **Mass**: Microgram, Milligram, Gram, Kilogram, Metric Ton, Ounce, Pound, Stone, US Ton
+- **Pressure**: Bar, Pascal, Pound per square inch, Standard Atmosphere, Torr
+- **Speed**: Miles per hour, Foot per second, Metre per second, Kilometre per hour, Knot
+- **Temperature**: Celsius, Fahrenheit, Kelvin, Rankine
+- **Time**: Nanosecond, Microsecond, Millisecond, Second, Minute, Hour, Day, Week, Month, Calendar Year, Decade, Century
+- **Volume**: US Liquid Gallon, US Liquid Quart, US Liquid Pint, US Legal Cup, US Fluid Ounce, US Tablespoon, US Teaspoon, Liter, Milliliter
+
+## Getting Started
 
 1. Install dependencies
 
@@ -11,40 +26,6 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```
 
 2. Start the app
-
    ```bash
-    npx expo start
+   npx expo start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
