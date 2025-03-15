@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import { StyleSheet, View } from "react-native";
 
 import { Colors } from "@/utils/Colors";
 
@@ -24,5 +25,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: Colors.backgroundColor,
+    paddingVertical: 52,
   },
 });
