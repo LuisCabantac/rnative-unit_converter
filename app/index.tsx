@@ -4,6 +4,8 @@ import { StyleSheet, View } from "react-native";
 
 import { Colors } from "@/utils/Colors";
 
+import Logo from "@/components/Logo";
+
 export default function Index() {
   const [loaded] = useFonts({
     "Outfit-Regular": require("../assets/fonts/Outfit-Regular.ttf"),
@@ -14,7 +16,7 @@ export default function Index() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <View style={styles.container}>
-        <Text>Unit Converter</Text>
+        <Logo />
       </View>
     </>
   );
