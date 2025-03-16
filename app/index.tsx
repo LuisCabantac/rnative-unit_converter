@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import { Colors } from "@/utils/Colors";
 
@@ -11,6 +11,8 @@ export default function Index() {
     "Outfit-Regular": require("../assets/fonts/Outfit-Regular.ttf"),
     "Outfit-Bold": require("../assets/fonts/Outfit-Bold.ttf"),
   });
+
+  if (!loaded) return <Text>Loading...</Text>;
 
   return (
     <>
