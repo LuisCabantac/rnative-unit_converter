@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
   text: {
     color: Colors.logoTextColor,
     fontSize: 32,
-    fontWeight: 600,
     fontFamily: "Outfit-Bold",
   },
   dotContainer: {
@@ -30,7 +29,6 @@ const styles = StyleSheet.create({
     left: 13,
     color: Colors.logoTextColor,
     fontFamily: "Outfit-Bold",
-    fontWeight: 600,
     fontSize: 16,
   },
 });
