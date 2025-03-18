@@ -6,6 +6,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Colors } from "@/utils/Colors";
 
 import Logo from "@/components/Logo";
+import Label from "@/components/Label";
 import InputBox from "@/components/InputBox";
 
 export default function Index() {
@@ -26,6 +27,7 @@ export default function Index() {
       <Stack.Screen options={{ headerShown: false }} />
       <View style={styles.container}>
         <Logo />
+        <Label>Value</Label>
         <InputBox value={inputValue} onSetValue={setInputValue} />
       </View>
     </>
