@@ -21,11 +21,13 @@ export default function InputBox({
 const styles = StyleSheet.create({
   input: {
     width: "100%",
-    margin: 12,
-    borderWidth: 1,
+    margin: 4,
+    borderWidth: 2,
     padding: 8,
     borderRadius: 5,
     borderColor: "#f4f6f7",
     backgroundColor: "#fafdff",
+    fontFamily: "Outfit-Regular",
+    fontSize: 16,
   },
 });
