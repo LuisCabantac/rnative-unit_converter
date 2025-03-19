@@ -24,9 +24,9 @@ export default function InputBox({
 const styles = StyleSheet.create({
   input: {
     width: "100%",
-    margin: 4,
+    marginVertical: 4,
     borderWidth: 2,
-    padding: 8,
+    padding: 12,
     borderRadius: 5,
     borderColor: "#f4f6f7",
     backgroundColor: "#fafdff",
