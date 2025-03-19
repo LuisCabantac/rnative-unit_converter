@@ -19,5 +19,6 @@ const styles = (textColor: string) =>
       fontWeight: 600,
       fontSize: 16,
       color: textColor,
+      textTransform: "uppercase",
     },
   });
