@@ -4,9 +4,11 @@ import { StyleSheet, TextInput } from "react-native";
 export default function InputBox({
   value,
   onSetValue,
+  placeholder = "",
 }: {
   value: string;
   onSetValue: React.Dispatch<React.SetStateAction<string>>;
+  placeholder?: string;
 }) {
   return (
     <TextInput
@@ -14,6 +16,7 @@ export default function InputBox({
       keyboardType="numeric"
       value={value ?? ""}
       onChangeText={onSetValue}
+      placeholder={placeholder}
     />
   );
 }
