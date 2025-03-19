@@ -27,8 +27,14 @@ export default function Index() {
       <Stack.Screen options={{ headerShown: false }} />
       <View style={styles.container}>
         <Logo />
-        <Label>Value</Label>
-        <InputBox value={inputValue} onSetValue={setInputValue} />
+        <View style={styles.inputLabelContainer}>
+          <Label>Value</Label>
+          <InputBox
+            value={inputValue}
+            onSetValue={setInputValue}
+            placeholder="Convert a value..."
+          />
+        </View>
       </View>
     </>
   );
@@ -41,5 +47,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.backgroundColor,
     paddingVertical: 52,
     paddingHorizontal: 42,
+    gap: 20,
+  },
+  inputLabelContainer: {
+    width: "100%",
   },
 });
