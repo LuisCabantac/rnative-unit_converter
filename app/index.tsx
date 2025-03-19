@@ -8,7 +8,7 @@ import { Colors } from "@/utils/Colors";
 
 import Logo from "@/components/Logo";
 import Label from "@/components/Label";
-import InputBox from "@/components/InputBox";
+import TextBox from "@/components/TextBox";
 import Select from "@/components/Select";
 
 export default function Index() {
@@ -52,9 +52,10 @@ export default function Index() {
             data={data}
             onSelectOption={(option: string) => setSelected(option)}
           />
-          <View style={styles.inputLabelContainer}>
+          <View style={styles.textBoxContainer}>
             <Label>Value</Label>
-            <InputBox
+            <TextBox
+              type="input"
               value={inputValue}
               onSetValue={setInputValue}
               placeholder="Convert a value..."
@@ -65,6 +66,14 @@ export default function Index() {
             data={data}
             onSelectOption={(option: string) => setSelected(option)}
           />
+          <View style={styles.textBoxContainer}>
+            <TextBox
+              type="output"
+              value={inputValue}
+              onSetValue={setInputValue}
+              placeholder="Converted value..."
+            />
+          </View>
         </View>
       </View>
     </>
@@ -84,7 +93,7 @@ const styles = StyleSheet.create({
     width: "100%",
     gap: 20,
   },
-  inputLabelContainer: {
+  textBoxContainer: {
     width: "100%",
   },
 });
