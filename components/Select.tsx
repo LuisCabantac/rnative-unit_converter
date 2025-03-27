@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import { SelectList, SelectListProps } from "react-native-dropdown-select-list";
+import { SelectList } from "react-native-dropdown-select-list";
 
 import Label from "@/components/Label";
 
@@ -25,7 +25,7 @@ export default function Select({
       <SelectList
         setSelected={(val: string) => onSelectOption(val)}
         data={data}
-        save="value"
+        save="key"
         fontFamily="Outfit-Regular"
         search={false}
         boxStyles={styles.boxStyle}

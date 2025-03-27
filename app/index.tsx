@@ -2,9 +2,10 @@ import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { SelectList } from "react-native-dropdown-select-list";
 
 import { Colors } from "@/utils/Colors";
+import { Units, UnitTypes } from "@/utils/Units";
+import * as Calculations from "@/utils/Calculations";
 
 import Logo from "@/components/Logo";
 import Label from "@/components/Label";
@@ -17,21 +18,29 @@ export default function Index() {
     "Outfit-Bold": require("../assets/fonts/Outfit-Bold.ttf"),
   });
   const [inputValue, setInputValue] = useState("");
-  const [selected, setSelected] = useState("");
-
-  const data = [
-    { key: "1", value: "Mobiles" },
-    { key: "2", value: "Appliances" },
-    { key: "3", value: "Cameras" },
-    { key: "4", value: "Computers" },
-    { key: "5", value: "Vegetables" },
-    { key: "6", value: "Diary Products" },
-    { key: "7", value: "Drinks" },
-  ];
+  const [selectedUnit, setSelectedUnit] = useState("");
+  const [selectedFrom, setSelectedFrom] = useState("");
+  const [selectedTo, setSelectedTo] = useState("");
+  const [outputValue, setOutputValue] = useState("");
 
   useEffect(() => {
     setInputValue((value) => value.replace(/[^0-9]/g, ""));
   }, [inputValue]);
+
+  useEffect(() => {
+    if (selectedFrom && selectedTo && inputValue) {
+      const calculationKey =
+        `${selectedFrom}To${selectedTo}` as keyof typeof Calculations;
+      if (typeof Calculations[calculationKey] === "function") {
+        const conversionFn = Calculations[calculationKey] as (
+          value: number
+        ) => number;
+        setOutputValue(String(conversionFn(Number(inputValue))));
+      } else {
+        setOutputValue("Conversion not available");
+      }
+    }
+  }, [inputValue, selectedFrom, selectedTo]);
 
   if (!loaded) return <Text>Loading...</Text>;
 
@@ -44,13 +53,13 @@ export default function Index() {
           <Select
             label="Select Unit"
             labelColor={Colors.labelSecondaryTextColor}
-            data={data}
-            onSelectOption={(option: string) => setSelected(option)}
+            data={UnitTypes}
+            onSelectOption={(option: string) => setSelectedUnit(option)}
           />
           <Select
             label="From"
-            data={data}
-            onSelectOption={(option: string) => setSelected(option)}
+            data={Units[selectedUnit]}
+            onSelectOption={(option: string) => setSelectedFrom(option)}
           />
           <View style={styles.textBoxContainer}>
             <Label>Value</Label>
@@ -63,14 +72,14 @@ export default function Index() {
           </View>
           <Select
             label="To"
-            data={data}
-            onSelectOption={(option: string) => setSelected(option)}
+            data={Units[selectedUnit]}
+            onSelectOption={(option: string) => setSelectedTo(option)}
           />
           <View style={styles.textBoxContainer}>
             <TextBox
               type="output"
-              value={inputValue}
-              onSetValue={setInputValue}
+              value={outputValue}
+              onSetValue={setOutputValue}
               placeholder="Converted value..."
             />
           </View>
